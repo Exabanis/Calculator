@@ -1,0 +1,252 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        /*page body styling*/
+        body {
+            background: darkgray;
+        }
+
+        #background {
+            width: 297px;
+            height: 435px;
+            background: gray;
+            margin: 50px auto;
+        }
+
+        /*show/hide calculator button*/
+        .showHide{
+            width:100px;
+            height:50px;
+            background-color: rgb(248, 236, 236);
+            font-family: sans-serif;
+            font-size: 20px;
+            color: blue;
+            margin-left:5px;
+            border-radius:5px;
+        }
+
+        /*minimize, maximize and close styling*/
+        #bar{
+            margin-left: 20px;
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }
+
+        .circle:hover {
+            font-family: sans-serif;
+            font-size: 12px;
+            color : black;
+            cursor: pointer;
+        }
+
+        .circle {
+            width:20px;
+            height:20px;
+            background-color: rgb(248, 236, 236);
+            font-family: sans-serif;
+            font-size: 12px;
+            color: rgb(248, 236, 236);
+            margin-left:5px;
+            border-radius:50px;
+        }
+
+        #c1:hover{
+            background-color: red;
+        }
+
+        #c2:hover{
+            background-color: gold;
+        }
+
+        #c3:hover{
+            background-color: green;
+        }
+
+        /*results display styling*/
+        .result {
+            display: block;
+            font-family: sans-serif;
+            width: 250px;
+            height: 70px;
+            text-align: right;
+            border: 0;
+            background: #3b3535;
+            color: #fff;
+            padding-top:30px;
+            font-size: 20px;
+            margin-left: 25px;
+            outline: none;
+            overflow: hidden;
+            letter-spacing: 4px;
+            position: relative;
+            top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .result:hover {
+            cursor: text;
+        }
+
+        /*buttons styling*/
+        button {
+            border: 0;
+            color: white;
+        }
+
+        #first-rows {
+            margin-bottom: 20px;
+            position: relative;
+            top: 10px;
+        }
+
+        .rows {
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        #zero {
+            width: 120px;
+            height: 50px;
+            margin-left: 25px;
+            border-radius: 4px;
+        }
+
+        .btn {
+            width: 55px;
+            height: 50px;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
+
+        .del-row {
+            margin-left: 25px;
+        }
+
+        /* Adding background color to the number values */
+        .num_background {
+            background: rgb(78, 76, 76);
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .num_background:active {
+            background: gray;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /*orange buttons styling*/
+        .operator_c {
+            background: orange;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .operator_c:active {
+            background: gray;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+
+    <script>
+        /*Addition function*/
+        function add(){
+            background.display.value += '+';
+        }
+
+        /*Subtraction function*/
+        function subtract(){
+            background.display.value += '-';
+        }
+
+        /*Division function*/
+        function devide(){
+            background.display.value += '/';
+        }
+
+        /*Multiplying function*/
+        function multiply(){
+            background.display.value += '*';
+        }
+
+        /*modulus function*/
+        function modulus(){
+            background.display.value += '%';
+        }
+
+        /*clear screen function*/
+        function lclear(){
+            background.display.value ='';
+        }
+
+        /*function to show or hide calculator*/
+        function toggleDisplay(hide)
+        {
+            if(hide == 1){
+                document.getElementById("background").style.display="none";
+            }else{
+            document.getElementById("background").style.display="block";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <button class="showHide" onclick="toggleDisplay(2)">Show Calculator</button>
+        <button class="showHide" onclick="toggleDisplay(1)">Hide Calculator</button>
+    </div>
+    <form id="background">
+        <div id="bar">
+            <button onclick="toggleDisplay(1)" value="close" id="c1" class="circle">x</button>
+            <button value="minimize" id="c2" class="circle">-</button>
+            <button value="maximize" id="c3" class="circle">+</button>
+        </div>
+        <div>
+            <input class="result" type="text" name="display" placeholder="0"/>
+        </div>
+        <div id="main">
+            <div id="first-rows">
+                <input type="button" value="AC" class="btn num_background del-row" onclick="lclear()"/>
+                <input type="button" value="&#177" class="btn num_background">
+                <input type="button" value="%" class="btn num_background" onclick="modulus()"/>
+                <input type="button" value="&#247" class="btn operator_c" onclick="devide()"/>
+            </div> 
+            <div class="rows">
+                <input type="button" value="7" class="btn num_background digit del-row" onclick="background.display.value += '7'"/>
+                <input type="button" value="8" class="btn num_background digit" onclick="background.display.value += '8'"/>
+                <input type="button" value="9" class="btn num_background digit" onclick="background.display.value += '9'"/>
+                <input type="button" value="*" class="btn operator_c" onclick="multiply()"/>
+            </div>
+            <div class="rows">
+                <input type="button" value="4" class="btn num_background digit del-row" onclick="background.display.value += '4'"/>
+                <input type="button" value="5" class="btn num_background digit" onclick="background.display.value += '5'"/>
+                <input type="button" value="6" class="btn num_background digit" onclick="background.display.value += '6'"/>
+                <input type="button" value="-" class="btn operator_c operator" onclick="subtract()">
+            </div> 
+            <div class="rows">
+                <input type="button" value="1" class="btn num_background digit del-row" onclick="background.display.value += '1'"/>
+                <input type="button" value="2" class="btn num_background digit" onclick="background.display.value += '2'"/>
+                <input type="button" value="3" class="btn num_background digit" onclick="background.display.value += '3'"/>
+                <input type="button" value="+" class="btn operator_c operator" onclick="add()">
+            </div>
+            <div class="rows">
+                <input type="button" value="0" class="num_background zero" id="zero" onclick="background.display.value += '0'"/>
+                <input type="button" value="." class="btn num_background period fall-back" onclick="background.display.value += '.'">
+                <input type="button" value="=" class="btn operator_c operator" onclick="background.display.value = eval(background.display.value)"/>
+            </div>
+        </div>        
+    </form>        
+</body>
+
+</html>
