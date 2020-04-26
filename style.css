@@ -1,0 +1,155 @@
+/*page body styling*/
+body {
+    background: darkgray;
+}
+
+#background {
+    width: 297px;
+    height: 435px;
+    background: gray;
+    margin: 50px auto;
+}
+
+/*show/hide calculator button*/
+.showHide{
+    width:100px;
+    height:50px;
+    background-color: rgb(248, 236, 236);
+    font-family: sans-serif;
+    font-size: 20px;
+    color: blue;
+    margin-left:5px;
+    border-radius:5px;
+}
+
+/*minimize, maximize and close styling*/
+#bar{
+    margin-left: 20px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.circle:hover {
+    font-family: sans-serif;
+    font-size: 12px;
+    color : black;
+    cursor: pointer;
+}
+
+.circle {
+    width:20px;
+    height:20px;
+    background-color: rgb(248, 236, 236);
+    font-family: sans-serif;
+    font-size: 12px;
+    color: black;
+    margin-left:5px;
+    border-radius:50px;
+    text-align: center;
+}
+
+#c1{
+    background-color: red;
+}
+
+#c2{
+    background-color: gold;
+}
+
+#c3{
+    background-color: green;
+}
+
+/*results display styling*/
+.result {
+    display: block;
+    font-family: sans-serif;
+    width: 250px;
+    height: 70px;
+    text-align: right;
+    border: 0;
+    background: #3b3535;
+    color: #fff;
+    padding-top:30px;
+    font-size: 20px;
+    margin-left: 25px;
+    outline: none;
+    overflow: hidden;
+    letter-spacing: 4px;
+    position: relative;
+    top: 5px;
+    margin-bottom: 10px;
+}
+
+.result:hover {
+    cursor: text;
+}
+
+/*buttons styling*/
+button {
+    border: 0;
+    color: white;
+}
+
+#first-rows {
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.rows {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#zero {
+    width: 120px;
+    height: 50px;
+    margin-left: 25px;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 55px;
+    height: 50px;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+.del-row {
+    margin-left: 25px;
+}
+
+/* Adding background color to the number values */
+.num_background {
+    background: rgb(78, 76, 76);
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+}
+
+.num_background:active {
+    background: gray;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+}
+
+/*orange buttons styling*/
+.operator_c {
+    background: orange;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+}
+
+.operator_c:active {
+    background: gray;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+}
